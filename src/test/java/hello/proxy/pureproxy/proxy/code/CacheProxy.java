@@ -19,6 +19,6 @@ public class CacheProxy implements Subject {
         if (cacheValue == null) {
             cacheValue = target.operation();
         }
-        return "data";
+        return cacheValue;
     }
 }
