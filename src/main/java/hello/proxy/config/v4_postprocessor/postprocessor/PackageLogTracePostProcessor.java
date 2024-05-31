@@ -37,12 +37,6 @@ public class PackageLogTracePostProcessor implements BeanPostProcessor {
             return bean;
         }
 
-        // 프록시 대상이면 프록시를 만들어서 반환
-        ProxyFactory factory = new ProxyFactory(bean);
-        factory.addAdvisor(advisor);
 
-        Object proxy = factory.getProxy();
-        log.info("create proxy: target={} proxy={}", bean.getClass(), proxy.getClass());
-        return proxy;
     }
 }
